@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className='flex flex-col justify-between '>
         <AppHeader/>
-        <main className='  container' >
+        <main className='container flex justify-center mx-auto my-8' >
         {children}
         </main>
         <h1 className=''>footer</h1>
