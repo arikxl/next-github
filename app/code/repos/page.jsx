@@ -3,6 +3,9 @@ import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa';
 
 async function fetchRepos() {
     const response = await fetch('https://api.github.com/users/arikxl/repos');
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     const repos = await response.json();
     return repos;
 }
@@ -18,7 +21,7 @@ const ReposPage = async () => {
             <ul>
                 {repos.map((repo) => (
                     <li key={repo.id} className='rounded-md border mb-2 p-2 bg-gray-200 text-gray-600 max-w-sm'>
-                        <Link href={`/cose/repos/${repo.name}`}>
+                        <Link href={`/code/repos/${repo.name}`}>
                             <h3 className='font-bold text-xl text-black'> {repo.name}</h3>
                             <p>Description: {repo.description}</p>
                             <div className=' flex justify-between items-center py-2'>
