@@ -4,9 +4,7 @@ import { FaStar, FaCodeBranch, FaEye } from 'react-icons/fa';
 
 async function fetchRepo(name) {
     const response = await fetch(`https://api.github.com/repos/arikxl/${name}`);
-
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
     const repo = await response.json();
     return repo;
 }
@@ -16,7 +14,7 @@ const Repo = async ({ name }) => {
     const repo = await fetchRepo(name);
 
     return (
-            <div  className='rounded-md border mb-2 p-2 bg-gray-200 text-gray-600 w-[50vw] '>
+            <div  className=''>
                     <h2 className='font-bold text-xl text-black'> {repo.name}</h2>
                     <p>Description: {repo.description}</p>
                     <div className=' flex justify-between items-center py-2'>
