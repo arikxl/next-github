@@ -15,7 +15,6 @@ export default function RootLayout({ children }) {
         <main className='container flex justify-center mx-auto my-8' >
         {children}
         </main>
-        <h1 className=''>footer</h1>
       </body>
     </html>
   )
